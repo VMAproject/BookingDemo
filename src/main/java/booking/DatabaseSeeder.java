@@ -12,8 +12,9 @@ import java.util.List;
 public class DatabaseSeeder implements CommandLineRunner {
 
     private BookingRepository bookingRepository;
+
     @Autowired
-    public DatabaseSeeder(BookingRepository bookingRepository){
+    public DatabaseSeeder(BookingRepository bookingRepository) {
         this.bookingRepository = bookingRepository;
     }
 
@@ -22,9 +23,9 @@ public class DatabaseSeeder implements CommandLineRunner {
 
         List<HotelBooking> bookings = new ArrayList<>();
 
-        bookings.add(new HotelBooking("Mariot",12.2,4));
-        bookings.add(new HotelBooking("Hilton",12.2,2));
-        bookings.add(new HotelBooking("Zirka", 500,1));
+        bookings.add(new HotelBooking("Mariot", 12.2, 4));
+        bookings.add(new HotelBooking("Hilton", 12.2, 2));
+        bookings.add(new HotelBooking("Zirka", 500, 1));
 
         bookingRepository.save(bookings);
 

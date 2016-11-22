@@ -7,7 +7,7 @@ import java.util.List;
 
 
 @Repository
-public interface BookingRepository extends JpaRepository<HotelBooking,Long> {
+public interface BookingRepository extends JpaRepository<HotelBooking, Long> {
 
     List<HotelBooking> findByPricePerNightLessThan(double price);
 

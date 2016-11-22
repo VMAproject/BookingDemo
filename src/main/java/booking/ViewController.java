@@ -15,12 +15,12 @@ public class ViewController {
     private String appMode;
 
     @Autowired
-    public ViewController(Environment environment){
+    public ViewController(Environment environment) {
         appMode = environment.getProperty("app-mode");
     }
 
     @RequestMapping("/")
-    public String index(Model model){
+    public String index(Model model) {
         model.addAttribute("datetime", new Date());
         model.addAttribute("username", "Verlamov");
         model.addAttribute("mode", appMode);

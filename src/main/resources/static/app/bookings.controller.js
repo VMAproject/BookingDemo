@@ -1,4 +1,3 @@
-
 (function () {
     'use strict';
 
@@ -18,29 +17,29 @@
 
         init();
 
-        function init(){
+        function init() {
             getAll();
         }
 
-        function getAll(){
+        function getAll() {
             var url = "/bookings/all";
             var bookingsPromise = $http.get(url);
-            bookingsPromise.then(function(response){
+            bookingsPromise.then(function (response) {
                 vm.bookings = response.data;
             });
         }
 
-        function getAffordable(){
+        function getAffordable() {
             var url = "/bookings/affordable/" + 100;
             var bookingsPromise = $http.get(url);
-            bookingsPromise.then(function(response){
+            bookingsPromise.then(function (response) {
                 vm.bookings = response.data;
             });
         }
 
-        function deleteBooking(id){
+        function deleteBooking(id) {
             var url = "/bookings/delete/" + id;
-            $http.post(url).then(function(response){
+            $http.post(url).then(function (response) {
                 vm.bookings = response.data;
             });
         }

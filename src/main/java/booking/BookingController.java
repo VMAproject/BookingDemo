@@ -20,25 +20,25 @@ public class BookingController {
     private BookingRepository bookingRepository;
 
     @Autowired
-    public BookingController(BookingRepository bookingRepository){
+    public BookingController(BookingRepository bookingRepository) {
         this.bookingRepository = bookingRepository;
     }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     @ApiMethod(description = "Get all hotel bookings from the database")
-    public List<HotelBooking> getAll(){
+    public List<HotelBooking> getAll() {
         return bookingRepository.findAll();
     }
 
     @RequestMapping(value = "/affordable/{price}", method = RequestMethod.GET)
     @ApiMethod(description = "Get all hotel bookings where the price per night is less than the provided value")
-    public List<HotelBooking> getAffordable(@ApiPathParam(name = "price") @PathVariable double price){
+    public List<HotelBooking> getAffordable(@ApiPathParam(name = "price") @PathVariable double price) {
         return bookingRepository.findByPricePerNightLessThan(price);
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ApiMethod(description = "Create a hotel booking and save it to the database")
-    public List<HotelBooking> create(@RequestBody HotelBooking hotelBooking){
+    public List<HotelBooking> create(@RequestBody HotelBooking hotelBooking) {
         bookingRepository.save(hotelBooking);
 
         return bookingRepository.findAll();
@@ -46,7 +46,7 @@ public class BookingController {
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ApiMethod(description = "Remove the hotel booking with the provided ID from the database")
-    public List<HotelBooking> remove(@ApiPathParam(name = "id") @PathVariable long id){
+    public List<HotelBooking> remove(@ApiPathParam(name = "id") @PathVariable long id) {
         bookingRepository.delete(id);
 
         return bookingRepository.findAll();

@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableJSONDoc
 public class BookingDemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BookingDemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BookingDemoApplication.class, args);
+    }
 }
