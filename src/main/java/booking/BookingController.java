@@ -11,8 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/bookings")
-@Api(
-        name = "Hotel Booking API",
+@Api(name = "Hotel Booking API",
         description = "Provides a list of methods that manage hotel bookings",
         stage = ApiStage.RC)
 public class BookingController {
