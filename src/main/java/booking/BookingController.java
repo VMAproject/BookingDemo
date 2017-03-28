@@ -39,7 +39,6 @@ public class BookingController {
     @ApiMethod(description = "Create a hotel booking and save it to the database")
     public List<HotelBooking> create(@RequestBody HotelBooking hotelBooking) {
         bookingRepository.save(hotelBooking);
-
         return bookingRepository.findAll();
     }
 

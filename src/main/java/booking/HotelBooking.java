@@ -17,8 +17,11 @@ public class HotelBooking {
     private long id;
 
     private String hotelName;
+
     private double pricePerNight;
+
     private int nbOfNights;
+
     private double totalPrice;
 
 
